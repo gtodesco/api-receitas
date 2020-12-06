@@ -1,3 +1,5 @@
+require("dotenv/config");
+
 const axios = require("axios");
 
 getSortedArray = (string) => {
@@ -15,11 +17,23 @@ getSortedArray = (string) => {
 
 getRecipes = async (ingredients) => {
     try {
-        const recipes = await axios.get(`http://www.recipepuppy.com/api/?i=${ingredients}`);
+        const result = await axios.get(`http://www.recipepuppy.com/api/?i=${ingredients}`);
 
-        return recipes.data.results;
+        return result.data.results;
     } catch(e) {
         return {erro: "Recipe service unavailable."}
+    }
+}
+
+getGif = async (keyword) => {
+    try {
+        
+        const result = await axios.get(`https://api.giphy.com/v1/gifs/search?api_key=${process.env.GIPHY_API_KEY}&q=${keyword}&limit=1`);
+
+        return result.data.data.length > 0 ? result.data.data[0].url : "No gif.";
+
+    } catch(e) {
+        return {erro: "Gif service unavailable."}
     }
 }
 
@@ -46,14 +60,21 @@ module.exports = {
 
             let recipes = [];
 
-            recipesPuppy.forEach((recipe) => {
+            for (const recipe of recipesPuppy) {
+
+                let gif = await getGif(recipe.title);
+
+                if (gif.erro) {
+                    throw gif.erro;
+                }
+
                 recipes.push({
-                    "title": recipe.title,
-                    "ingredients": getSortedArray(recipe.ingredients),
-                    "link": recipe.href,
-                    "gif": ""
-                })
-            })
+                    title: recipe.title,
+                    ingredients: getSortedArray(recipe.ingredients),
+                    link: recipe.href,
+                    gif
+                });
+            }
 
             return res.json({keywords, recipes});
 
