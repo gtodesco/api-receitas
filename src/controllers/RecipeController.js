@@ -44,7 +44,18 @@ module.exports = {
                 throw recipesPuppy.erro;
             }
 
-            return res.json({keywords, recipesPuppy});
+            let recipes = [];
+
+            recipesPuppy.forEach((recipe) => {
+                recipes.push({
+                    "title": recipe.title,
+                    "ingredients": getSortedArray(recipe.ingredients),
+                    "link": recipe.href,
+                    "gif": ""
+                })
+            })
+
+            return res.json({keywords, recipes});
 
         } catch(erro) {
             return res.status(400).json({erro});
