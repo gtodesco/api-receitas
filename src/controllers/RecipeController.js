@@ -1,5 +1,18 @@
 const axios = require("axios");
 
+getSortedArray = (string) => {
+
+    arrString = string.split(",");
+
+    arrString = arrString.map((string) => {
+        return string.trim();
+    });
+
+    arrString = arrString.sort();
+
+    return arrString;
+}
+
 getRecipes = async (ingredients) => {
     try {
         const recipes = await axios.get(`http://www.recipepuppy.com/api/?i=${ingredients}`);
@@ -19,19 +32,19 @@ module.exports = {
             }
 
             const ingredients = req.query.i;
-            const arrIngredients = ingredients.split(",").sort();
+            const keywords = getSortedArray(ingredients);
             
-            if (arrIngredients.length > 3) {
+            if (keywords.length > 3) {
                 throw "Informed more than 3 ingredients.";
             }
 
-            let recipes = await getRecipes(ingredients);
+            const recipesPuppy = await getRecipes(ingredients);
 
-            if (recipes.erro) {
-                throw recipes.erro;
+            if (recipesPuppy.erro) {
+                throw recipesPuppy.erro;
             }
 
-            return res.json({ingredients, arrIngredients, recipes});
+            return res.json({keywords, recipesPuppy});
 
         } catch(erro) {
             return res.status(400).json({erro});
