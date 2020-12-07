@@ -3,13 +3,21 @@ require('dotenv/config');
 const axios = require('axios');
 
 const getSortedArray = (string) => {
-  let arrWords = string.split(',');
+  try {
+    if (typeof string !== 'string') {
+      throw new Error();
+    }
 
-  arrWords = arrWords.map((word) => word.trim());
+    let arrWords = string.split(',');
 
-  arrWords = arrWords.sort();
+    arrWords = arrWords.map((word) => word.trim());
 
-  return arrWords;
+    arrWords = arrWords.sort();
+
+    return arrWords;
+  } catch (e) {
+    return { erro: 'Invalid parameter.' };
+  }
 };
 
 const getRecipes = async (ingredients) => {
