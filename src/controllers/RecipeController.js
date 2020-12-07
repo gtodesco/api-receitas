@@ -33,6 +33,8 @@ const getGif = async (keyword) => {
 };
 
 module.exports = {
+  getSortedArray,
+
   async getRecipes(req, res) {
     try {
       if (!req.query.i) {
@@ -71,7 +73,7 @@ module.exports = {
 
       return res.json({ keywords, recipes });
     } catch (erro) {
-      return res.status(400).json(erro.message);
+      return res.status(400).json({ erro: erro.message });
     }
   },
 };
