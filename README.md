@@ -4,6 +4,7 @@ Seções
 =================
    * [Setup](#setup)
    * [Tecnologia](#tecnologia)
+   * [Resultado](#resultado)
    * [Autor](#autor)
 
 Setup
@@ -58,6 +59,132 @@ Tecnologia
 #### APIs
 - RecipePuppy: http://www.recipepuppy.com/api/
 - Giphy (necessário Key): https://api.giphy.com/v1/gifs/search/
+
+Resultado
+===========
+```
+{
+  "keywords": [
+    "cheese",
+    "onion",
+    "tomato"
+  ],
+  "recipes": [
+    {
+      "title": "Easy Mexican Casserole Recipe",
+      "ingredients": [
+        "cheese",
+        "cottage cheese",
+        "ground beef",
+        "tomato",
+        "tortilla chips"
+      ],
+      "link": "http://www.grouprecipes.com/36010/easy-mexican-casserole.html",
+      "gif": "https://giphy.com/gifs/memecandy-YP1Jb0JNc7kqFDbdjm"
+    },
+    {
+      "title": "Speedy Egg & Cheese Stack \r\n\r\n",
+      "ingredients": [
+        "cheese",
+        "eggs",
+        "flour tortillas",
+        "tomato"
+      ],
+      "link": "http://www.kraftfoods.com/kf/recipes/speedy-egg-cheese-stack-91423.aspx",
+      "gif": "https://giphy.com/gifs/eggs-qJkRbWM1MfVjq"
+    },
+    {
+      "title": "Orzo Pasta Salad \r\n\t\t\r\n\t\r\n\t\t\r\n\t\r\n\t\r\n\r\n",
+      "ingredients": [
+        "cheese",
+        "italian dressing",
+        "pasta",
+        "tomato"
+      ],
+      "link": "http://www.kraftfoods.com/kf/recipes/orzo-pasta-salad-50545.aspx",
+      "gif": "https://giphy.com/gifs/mtvcribs-pasta-jersey-shore-fnZxN5xrA9s1eRFHQv"
+    },
+    {
+      "title": "Grilled Cheese Perfection",
+      "ingredients": [
+        "bread",
+        "butter",
+        "cheese",
+        "tomato"
+      ],
+      "link": "http://www.recipezaar.com/Grilled-Cheese-Perfection-32702",
+      "gif": "https://giphy.com/gifs/food-dinner-cow-l378v5zfXnryQFG1y"
+    },
+    {
+      "title": "Ww 6 Point Bacon Chicken Melt",
+      "ingredients": [
+        "bacon",
+        "cheese",
+        "chicken",
+        "tomato"
+      ],
+      "link": "http://www.recipezaar.com/Ww-6-Point-Bacon-Chicken-Melt-121770",
+      "gif": "https://giphy.com/gifs/best-gifs-soup-chicken-campbells-UynvjkM3JtXr2"
+    },
+    {
+      "title": "Breakfast Sandwich",
+      "ingredients": [
+        "avocado",
+        "bread",
+        "cheese",
+        "tomato"
+      ],
+      "link": "http://www.recipezaar.com/Breakfast-Sandwich-120887",
+      "gif": "https://giphy.com/gifs/cinemagraph-47CcqqOy4Fyk0pfMkR"
+    },
+    {
+      "title": "Chili & Cheese Ramen Wonder",
+      "ingredients": [
+        "beans",
+        "cheese",
+        "ramen noodles",
+        "tomato"
+      ],
+      "link": "http://www.recipezaar.com/Chili-Cheese-Ramen-Wonder-24822",
+      "gif": "https://giphy.com/gifs/chili-ABc0eNo27IFFu"
+    },
+    {
+      "title": "Low Carb High Protein Low Calorie Bagel Delight Recipe",
+      "ingredients": [
+        "avocado",
+        "bagel",
+        "bagel",
+        "cheese",
+        "tomato"
+      ],
+      "link": "http://www.grouprecipes.com/73314/low-carb-high-protein-low-calorie-bagel-delight.html",
+      "gif": "https://giphy.com/gifs/aetv-rob-lowe-the-files-26n6JhR6hms1Qy2kg"
+    },
+    {
+      "title": "Garlic Cheese And Tomato Bread Bites Recipe",
+      "ingredients": [
+        "cheese",
+        "marinara sauce",
+        "sandwich rolls",
+        "tomato"
+      ],
+      "link": "http://www.grouprecipes.com/40866/garlic-cheese-and-tomato-bread-bites.html",
+      "gif": "https://giphy.com/gifs/cooking-Q4PcMC8apFXBm"
+    },
+    {
+      "title": "Haloumi Cheese And Tomato Toastie Recipe",
+      "ingredients": [
+        "bagel",
+        "cheese",
+        "pesto",
+        "tomato"
+      ],
+      "link": "http://www.grouprecipes.com/405/haloumi-cheese-and-tomato-toastie.html",
+      "gif": "https://giphy.com/gifs/rice-fried-leftover-Aj9EHGocwb4bu"
+    }
+  ]
+}
+```
 
 Autor
 ============
